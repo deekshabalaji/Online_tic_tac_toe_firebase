@@ -1,0 +1,52 @@
+
+<p>{{game.message}}</p>
+<p>
+    Displaying game <code>{{game.id}}</code>. 
+    <div ng-if="!winner.$value">Player <code>{{game.player}}</code></div>
+</p>
+
+<!--Can {{game.player}} play ? = {{player==turn.$value}}-->
+<div class="row">
+    <div class="col-xs-9">
+        <h3>Game Goes Here</h3>
+        <a href="javascript:void(0)" ng-click="redirectToHome()"> < Home </a>
+        <div id="board" style="border:1px solid;height:300px;width:300px;">
+        	<a ng-click="turn.$value==game.player && board.zerozero=='' && !winner.$value && boxClicked('zero','zero')"><div style="border:1px solid;height: 100px;text-decoration: none;" class="col-xs-4">
+        		<p style="text-align: center; font-size: 25px; padding:30px;" ng-if="board.zerozero">{{board.zerozero}}</p>
+        	</div></a>
+        	<a  ng-click="turn.$value==game.player && board.zeroone=='' && !winner.$value &&  boxClicked('zero','one')" ><div style="border:1px solid;height: 100px;" class="col-xs-4">
+        		<p style="text-align: center; font-size: 25px; padding:30px;" ng-if="board.zeroone">{{board.zeroone}}</p>
+        	</div></a>
+
+        	<a  ng-click="turn.$value==game.player && board.zerotwo=='' && !winner.$value &&    boxClicked('zero','two')"><div  style="border:1px solid;height: 100px;" class="col-xs-4">
+        		<p style="text-align: center; font-size: 25px; padding:30px;" ng-if="board.zerotwo">{{board.zerotwo}}</p>
+        	</div></a>
+        	<a ng-click=" turn.$value==game.player && board.onezero=='' && !winner.$value &&    boxClicked('one','zero')"><div  style="border:1px solid;height: 100px;" class="col-xs-4">
+        		<p style="text-align: center; font-size: 25px; padding:30px;"  ng-if="board.onezero">{{board.onezero}}</p>
+        	</div></a>
+        	<a  ng-click="turn.$value==game.player &&  board.oneone=='' && !winner.$value &&   boxClicked('one','one')"><div  style="border:1px solid;height: 100px;" class="col-xs-4">
+        		<p style="text-align: center; font-size: 25px; padding:30px;" ng-if="board.oneone">{{board.oneone}}</p>
+        	</div></a>
+        	<a  ng-click=" turn.$value==game.player && board.onetwo=='' && !winner.$value &&   boxClicked('one','two')" ><div style="border:1px solid;height: 100px;" class="col-xs-4">
+        		<p style="text-align: center; font-size: 25px; padding:30px;" ng-if="board.onetwo">{{board.onetwo}}</p>
+        	</div></a>
+        	<a ng-click=" turn.$value==game.player  && board.twozero=='' && !winner.$value &&    boxClicked('two','zero')"><div  style="border:1px solid;height: 100px;" class="col-xs-4">
+        		<p  style="text-align: center; font-size: 25px; padding:30px;" ng-if="board.twozero">{{board.twozero}}</p>
+        	</div></a>
+        	<a  ng-click="turn.$value==game.player && board.twoone=='' && !winner.$value &&     boxClicked('two','one')"><div  style="border:1px solid;height: 100px;" class="col-xs-4">
+        		<p style="text-align: center; font-size: 25px; padding:30px;" ng-if="board.twoone">{{board.twoone}}</p>
+        	</div></a>
+        	<a ng-click="turn.$value==game.player &&   board.twotwo=='' && !winner.$value &&   boxClicked('two','two')"><div  style="border:1px solid;height: 100px;" class="col-xs-4">
+        		<p style="text-align: center; font-size: 25px; padding:30px;" ng-if="board.twotwo">{{board.twotwo}}</p>
+        	</div></a>
+        </div>
+        <h3>{{turn.$value}} Player turn</h3>
+        <h2 ng-if="winner.$value && winner.$value!='draw'">{{winner.$value}} Wins the game.</h2>
+        <h2 ng-if="winner.$value && winner.$value=='draw'">The game is drawn.</h2>
+    </div>
+
+    <div class="col-xs-3">
+        <h3>Chat</h3>
+       
+    </div>
+</div>
